@@ -117,7 +117,7 @@ header nav.container {
 
 .connect-button:hover {
   color: var(--color-logo);
-  transform: scale(1.1)
+  transform: scale(1.05);
 }
 
 /*===== Home Container =========*/
@@ -140,7 +140,6 @@ header nav.container {
 }
 
 .about-artists {
-  display: flex;
   position: relative;
 }
 
@@ -173,8 +172,8 @@ header nav.container {
 
 .artists-infos {
   position: absolute;
-  right: 2rem;
-  top: 2.5rem;
+  top: 1rem;
+  left: 11rem;
   font-size: 1.125rem;
 }
 
@@ -267,11 +266,16 @@ section.about .container {
   text-decoration: underline;
 }
 
-.about-info>a {
+.about-info a {
   display: block;
   color: var(--text-color);
   margin-top: 4rem;
   text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.about-info a:hover {
+  color: var(--color-logo);
 }
 
 .about-image img {
@@ -280,13 +284,14 @@ section.about .container {
 }
 
 /*===== TOP OF THE WEEK SECTION ==========================*/
-.tops-of-the-week {
+section.tops-of-the-week {
   margin-top: 9.375rem;
 }
 
 .title {
   font-size: 3.125rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .title span {
@@ -304,10 +309,19 @@ section.about .container {
   opacity: 0.4;
 }
 
+/* --- NFTs Cards --- */
+
 .top-card {
+  display: block;
   margin-bottom: 3.125rem;
+  color: var(--text-color);
+  transition: color 0.3s, transform 0.3s;
 }
 
+.top-card:hover {
+  color: var(--color-logo);
+  transform: scale(1.05);
+}
 
 .top-card .name {
   display: flex;
@@ -338,12 +352,8 @@ section.about .container {
 }
 
 /*===== TOP ARTISTS SECTION ==========================*/
-.top-artists {
+section.top-artists {
   margin: 9.375rem 0;
-}
-
-.top-artists .title {
-  text-align: center;
 }
 
 .top-artists-cards {
@@ -353,6 +363,7 @@ section.about .container {
   gap: 7rem;
 }
 
+/* --- Artists Cards --- */
 .top-artist-card {
   display: flex;
   align-items: center;
@@ -361,6 +372,15 @@ section.about .container {
   padding: 1.5625rem 2rem;
   width: 21.875rem;
   height: 9.375rem;
+  transition: transform 0.3s;
+}
+
+.top-artist-card:hover {
+  transform: scale(1.05)
+}
+
+.top-artists a {
+  color: var(--text-color);
 }
 
 .artist-info p {
@@ -381,7 +401,8 @@ section.about .container {
   color: var(--text-color);
 }
 
-.top-artists .container a {
+/* --- Top Artists Button --- */
+.top-artists .container .see-more {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,10 +410,16 @@ section.about .container {
   font-size: 1.25rem;
   color: var(--text-color);
   margin-top: 4rem;
+  transition: transform 0.3s, color 0.3s;
 }
 
-.top-artists .container a img {
+.top-artists .container .see-more img {
   margin-left: 1rem;
+}
+
+.top-artists .container .see-more:hover {
+  transform: scale(1.05);
+  color: var(--color-logo);
 }
 
 /*===== FOOTER ==========================*/
@@ -420,14 +447,15 @@ footer {
 .logo-and-button a {
   background: var(--color-logo);
   padding: 1.875rem;
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .logo-and-button a:hover {
   transform: scale(1.05);
-  background: var(--text-color);
+  filter: brightness(0.8);
 }
 
+/* --- News and Links --- */
 .news-and-links {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -477,13 +505,14 @@ footer {
   outline: none;
   border: none;
   cursor: pointer;
-  transition: filter 0.3s;
+  transition: background 0.5s;
 }
 
 .input button:hover {
-  filter: brightness(0.8);
+  background: var(--color-logo);
 }
 
+/*  Links  */
 .links-list {
   display: flex;
   justify-content: space-around;
@@ -500,7 +529,7 @@ footer {
   font-size: 1.25rem;
   color: var(--subtitle-color);
   margin-bottom: 0.5rem;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
 .link a:hover {
@@ -524,7 +553,254 @@ footer {
   color: var(--subtitle-color);
 }
 
+/* --- Social media logos --- */
+
 .social-media-logos {
   display: flex;
   gap: 3.125rem;
+}
+
+.social-media-logos a {
+  transition: transform 0.3s;
+}
+
+.social-media-logos a:hover {
+  transform: scale(1.1)
+}
+
+/*===== RESPONSIVIDADE ==========================*/
+@media (max-width: 1277px) {
+
+  section.home,
+  section.about,
+  section.tops-of-the-week,
+  section.top-artists,
+  footer {
+    padding: 0 3rem;
+  }
+
+  .home-gallery ul {
+    gap: 2rem;
+  }
+
+  .home-gallery .gallery-1,
+  .home-gallery .gallery-2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .top-artists-cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1030px) {
+  .artists-images img {
+    width: 20%;
+  }
+
+  .artists-infos {
+    font-size: 0.8rem;
+    top: 0rem;
+    left: 8rem;
+  }
+}
+
+@media (max-width: 940px) {
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 908px) {
+  .top-artists-cards {
+    gap: 5rem;
+  }
+
+  .top-artist-card {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .home-title {
+    font-size: 2.125rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .home-badge img {
+    height: 70%;
+  }
+
+  .about-text {
+    margin-bottom: 1.4rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .artists-images img:nth-child(2) {
+    left: 0.5rem;
+  }
+
+  .artists-images img:nth-child(3) {
+    left: 1rem;
+  }
+
+  .artists-images img:nth-child(4) {
+    left: 1.5rem;
+  }
+
+  .artists-infos {
+    left: 4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  section.tops-of-the-week {
+    margin-top: 5.375rem;
+  }
+
+  section.top-artists {
+    margin-top: 5.375rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .top-artists-cards {
+    margin-top: 6rem;
+  }
+
+  .tops-cards {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .central-line {
+    display: none;
+  }
+
+  .home-infos {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .home-badge {
+    display: none;
+  }
+
+  .artists-infos {
+    left: 4.5rem;
+  }
+
+  .news-and-links {
+    grid-template-columns: 1fr;
+  }
+
+  .news {
+    padding: 4.2rem 0;
+    border-right: none;
+    border-bottom: 1px solid var(--subtitle-color);
+  }
+
+  .links-list {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 740px) {
+  section.about .container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-summary-cards {
+    flex-direction: row;
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-infos {
+    grid-template-columns: 1fr;
+    margin-bottom: 4.25rem;
+  }
+
+  .artists-images img {
+    width: 7%;
+  }
+
+  .home-title {
+    margin-top: 2rem;
+  }
+
+  .about-content {
+    padding-top: 3rem;
+  }
+
+  .about-infos {
+    flex-direction: column;
+  }
+
+  .about-info {
+    padding: 0 0 2rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .social-media-logos {
+    gap: 1.125rem;
+  }
+
+  .news input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .summary-card {
+    font-size: 2rem;
+  }
+
+  .about-info {
+    font-size: 1rem;
+  }
+
+  .logo-and-button a {
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    font-size: 14px
+  }
+
+  section.home,
+  section.about,
+  section.tops-of-the-week,
+  section.top-artists,
+  footer {
+    padding: 0 2rem;
+  }
+
+  .logo-and-button p {
+    margin-right: 1rem;
+  }
+
+  .top-card img {
+    width: 100%;
+  }
+
+  .top-card .name p {
+    font-size: 1.5rem;
+  }
+
+  .top-card .name img {
+    width: auto;
+  }
+
 }
