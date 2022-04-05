@@ -1,0 +1,530 @@
+/*===== RESET ==========================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*===== SR-ONLY ==========================*/
+.sr-only {
+  /* para sumir com os elementos que tem essa clase, porém o leitor de tela irá continuar lendo p/ acessiblidade*/
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0 0 0 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*===== VARIABLES ==========================*/
+:root {
+  --body-background: #0e0e0e;
+  --color-logo: #ff5b50;
+  --card-color: #252525;
+  --text-color: #fff;
+  --subtitle-color: #5a5757;
+  --black-text: #000;
+  --color-input: #0D0D0D;
+
+  /*Font Family*/
+  --body-font: 'Montserrat', sans-serif;
+}
+
+/*===== BASE ==========================*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--body-background);
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1277px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*===== HOME SECTION ==========================*/
+.home {
+  background-image: url(./assets/background.svg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/*===== Header ======*/
+header {
+  margin: 0 auto 5.625rem;
+  padding-top: 3.75rem;
+}
+
+header nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.logo span {
+  color: var(--color-logo);
+}
+
+.menu ul {
+  display: flex;
+  gap: 3.75rem;
+}
+
+.menu ul a {
+  color: var(--text-color);
+  font-size: 1.125rem;
+}
+
+.menu ul a:hover {
+  color: var(--color-logo);
+  font-weight: 700;
+}
+
+.connect-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px 14px;
+  color: var(--black-text);
+  font-weight: 700;
+  background: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.connect-button:hover {
+  color: var(--color-logo);
+  transform: scale(1.1)
+}
+
+/*===== Home Container =========*/
+.home-infos {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 6.25rem;
+}
+
+/* About artists and images*/
+.home-about {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  margin-bottom: 3.4375rem;
+}
+
+.about-artists {
+  display: flex;
+  position: relative;
+}
+
+.artists-images {
+  position: relative;
+}
+
+.artists-images img:nth-child(1) {
+  position: absolute;
+  z-index: 4;
+}
+
+.artists-images img:nth-child(2) {
+  position: absolute;
+  left: 1.5rem;
+  z-index: 3;
+}
+
+.artists-images img:nth-child(3) {
+  position: absolute;
+  left: 3rem;
+  z-index: 2;
+}
+
+.artists-images img:nth-child(4) {
+  position: absolute;
+  left: 4.5rem;
+  z-index: 1;
+}
+
+.artists-infos {
+  position: absolute;
+  right: 2rem;
+  top: 2.5rem;
+  font-size: 1.125rem;
+}
+
+.artists-infos span {
+  font-weight: 700;
+}
+
+/* Home titles etc*/
+.home-title {
+  font-size: 3.125rem;
+  font-weight: 700;
+}
+
+.home-title span {
+  color: var(--color-logo);
+}
+
+.home-badge {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* --- Home Gallery --- */
+.home-gallery ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.home-gallery ul li {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.home-gallery ul li:hover {
+  transform: scale(1.05);
+}
+
+.home-gallery .gallery-1 {
+  margin-bottom: 3.75rem;
+}
+
+/*===== ABOUT SECTION ==========================*/
+section.about {
+  border-bottom: 1px solid var(--subtitle-color);
+}
+
+section.about .container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.about-summary-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  border-right: 1px solid var(--subtitle-color);
+  padding-top: 5rem;
+}
+
+.summary-card {
+  font-size: 3.125rem;
+  font-weight: 600;
+}
+
+.summary-card span {
+  font-size: 1.25rem;
+  color: var(--subtitle-color);
+  margin-top: 0.5rem;
+}
+
+.about-content {
+  padding-top: 5rem;
+}
+
+.about-infos {
+  display: flex;
+  margin-bottom: 4.4rem;
+}
+
+.about-info {
+  font-size: 1.125rem;
+  padding: 0 2rem;
+}
+
+.about-info span {
+  color: var(--color-logo);
+  text-decoration: underline;
+}
+
+.about-info>a {
+  display: block;
+  color: var(--text-color);
+  margin-top: 4rem;
+  text-decoration: underline;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+/*===== TOP OF THE WEEK SECTION ==========================*/
+.tops-of-the-week {
+  margin-top: 9.375rem;
+}
+
+.title {
+  font-size: 3.125rem;
+  font-weight: 700;
+}
+
+.title span {
+  color: var(--color-logo)
+}
+
+.tops-cards {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.central-line {
+  border: 1px solid var(--subtitle-color);
+  opacity: 0.4;
+}
+
+.top-card {
+  margin-bottom: 3.125rem;
+}
+
+
+.top-card .name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.top-card .name p {
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.top-card .author {
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.625rem;
+}
+
+.top-card .author p:nth-child(1) {
+  font-weight: 600;
+  color: var(--subtitle-color);
+}
+
+.top-card .author p:nth-child(2) {
+  color: var(--color-logo);
+}
+
+/*===== TOP ARTISTS SECTION ==========================*/
+.top-artists {
+  margin: 9.375rem 0;
+}
+
+.top-artists .title {
+  text-align: center;
+}
+
+.top-artists-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 7.5rem;
+  gap: 7rem;
+}
+
+.top-artist-card {
+  display: flex;
+  align-items: center;
+  background: var(--card-color);
+  gap: 2.4rem;
+  padding: 1.5625rem 2rem;
+  width: 21.875rem;
+  height: 9.375rem;
+}
+
+.artist-info p {
+  font-size: 1.25rem;
+}
+
+.artist-info p span {
+  color: var(--color-logo);
+  display: block;
+  margin-top: 10px;
+}
+
+.top-artist-card.plus {
+  background: var(--color-logo);
+}
+
+.top-artist-card.plus span {
+  color: var(--text-color);
+}
+
+.top-artists .container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-top: 4rem;
+}
+
+.top-artists .container a img {
+  margin-left: 1rem;
+}
+
+/*===== FOOTER ==========================*/
+footer {
+  background: var(--card-color);
+}
+
+.logo-and-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5.125rem 0 3.75rem;
+  border-bottom: 1px solid var(--subtitle-color);
+}
+
+.logo-and-button p {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.logo-and-button p span {
+  color: var(--color-logo);
+}
+
+.logo-and-button a {
+  background: var(--color-logo);
+  padding: 1.875rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.logo-and-button a:hover {
+  transform: scale(1.05);
+  background: var(--text-color);
+}
+
+.news-and-links {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid var(--subtitle-color);
+
+}
+
+.news {
+  padding-top: 4.2rem;
+  border-right: 1px solid var(--subtitle-color);
+}
+
+.news p {
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin-bottom: 1.625rem;
+  padding-right: 2rem;
+}
+
+.news p span {
+  color: var(--color-logo)
+}
+
+.news .input {
+  display: flex;
+}
+
+.news input {
+  width: 17.5rem;
+  height: 4.125rem;
+  background: var(--color-input);
+  color: var(--subtitle-color);
+  outline: none;
+  border: none;
+  font-family: var(--body-font-family);
+  font-size: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.input button {
+  width: 7.625rem;
+  height: 4.125rem;
+  background: var(--text-color);
+  color: var(--black-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+.input button:hover {
+  filter: brightness(0.8);
+}
+
+.links-list {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 4.2rem;
+  margin-bottom: 3.3rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+}
+
+.link a {
+  font-size: 1.25rem;
+  color: var(--subtitle-color);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.link a:hover {
+  color: var(--color-logo);
+}
+
+.link a:nth-child(1) {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.social-media-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.375rem 0 3.8rem;
+}
+
+.social-media-links p {
+  font-size: 1.25rem;
+  color: var(--subtitle-color);
+}
+
+.social-media-logos {
+  display: flex;
+  gap: 3.125rem;
+}
