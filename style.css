@@ -735,7 +735,7 @@ footer {
   }
 
   .home-title {
-    margin-top: 2rem;
+    order: -1;
   }
 
   .about-content {
@@ -777,6 +777,10 @@ footer {
 @media (max-width: 400px) {
   :root {
     font-size: 14px
+  }
+
+  header {
+    margin: 0 auto 4.625rem;
   }
 
   section.home,
